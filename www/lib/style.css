@@ -4,8 +4,9 @@
 
 .facepic {
   padding-bottom: 0;
-  height: 176px;
+  height: 178px;
   background-color: #D81E05;
+  margin-top: -12px;
 }
 
 .progress {
