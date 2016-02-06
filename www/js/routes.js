@@ -27,7 +27,7 @@ angular.module('app.routes', [])
     .state('tabsController.stats', {
       url: '/stats',
       views: {
-        'tab3': {
+        'tab4': {
           templateUrl: 'templates/stats.html',
           controller: 'statsCtrl'
         }
@@ -60,10 +60,14 @@ angular.module('app.routes', [])
     
       
         
-    .state('redeem', {
+    .state('tabsController.redeem', {
       url: '/redeem',
-      templateUrl: 'templates/redeem.html',
-      controller: 'redeemCtrl'
+      views: {
+        'tab3': {
+          templateUrl: 'templates/redeem.html',
+          controller: 'redeemCtrl'
+        }
+      }
     })
         
       

@@ -774,7 +774,7 @@
   text-rendering: auto;
   line-height: 1;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
+  -moz-osx-font-smoothing: grayscale;}
 
 .ion-alert:before {
   content: ""; }
@@ -987,7 +987,8 @@
   content: ""; }
 
 .ion-android-home:before {
-  content: ""; }
+  content: "";
+color: red;}
 
 .ion-android-image:before {
   content: ""; }
@@ -2151,10 +2152,12 @@
   content: ""; }
 
 .ion-ios-pulse:before {
-  content: ""; }
+  content: "";
+}
 
 .ion-ios-pulse-strong:before {
-  content: ""; }
+  content: "";
+color: red; }
 
 .ion-ios-rainy:before {
   content: ""; }
@@ -2535,7 +2538,8 @@
   content: ""; }
 
 .ion-plus-circled:before {
-  content: ""; }
+  content: "";
+color: red;}
 
 .ion-plus-round:before {
   content: ""; }
@@ -9302,3 +9306,7 @@ a.button {
   font-weight: bold;
   text-align: center;
 }*/
+
+.facepic {
+  padding-bottom: 0;
+}
