@@ -8816,3 +8816,23 @@ ionic.views.Slider = ionic.views.View.inherit({
 })(ionic);
 
 })();
+
+$(function () {
+    $('.btn-radio').click(function(e) {
+        $('.btn-radio').not(this).removeClass('active')
+    		.siblings('input').prop('checked',false)
+            .siblings('.img-radio').css('opacity','0.5');
+    	$(this).addClass('active')
+            .siblings('input').prop('checked',true)
+    		.siblings('.img-radio').css('color','red');
+    });
+});
+$scope.showPopup = function() {
+   $scope.data = {}
+$scope.showConfirm = function() {
+     var confirmPopup = $ionicPopup.confirm({
+       title: 'Consume Ice Cream',
+       template: 'Are you sure you want to eat this ice cream?'
+     });
+   }
+ }

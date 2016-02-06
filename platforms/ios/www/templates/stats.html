@@ -1,14 +1,40 @@
-<ion-view title="Stats">
+<ion-view title="Stats1" hide-nav-bar="true">
+<ion-item class="app-header">Stats</ion-item>
+
     <ion-content overflow-scroll="true" padding="true" class="has-header">
-        <div style="line-height: 250px; border: 1px solid rgb(238, 238, 238); border-radius: 3px; text-align: center; background-color: rgb(255, 255, 255);">
-            <i class="icon ion-image" style="font-size: 64px; color: rgb(136, 136, 136); vertical-align: middle;"></i>
+
+<h4>Overall Goals (Remaining Amount) $3000k</h4>
+<br>
+
+        <canvas id="doughnut" class="chart chart-doughnut" chart-data="data" chart-labels="labels" chart-colours="colors" height="100">
+        </canvas> 
+
         </div>
         <ion-list></ion-list>
         <div class="spacer" style="width: 300px; height: 20px;"></div>
-        <ion-list>
-            <ion-item>Item 1</ion-item>
-            <ion-item>Item 2</ion-item>
-            <ion-item>Item 3</ion-item>
+        <ion-list sty>
+            <ion-item style="border-color:#ddd;">
+            <div class="progress" style="margin-top:12px;">
+            <div class="progress-bar progress-bar-info mortgage-color" role="progressbar" aria-valuenow="60"
+                                      aria-valuemin="0" aria-valuemax="100" style="width:60%;">
+                                      $150 to go
+                                    </div></div>Mortgage<span style="float: right;">Goal: $50k</span></ion-item>
+            <ion-item style="border-color:#ddd;">
+            <div class="progress" style="margin-top:12px;">
+            <div class="progress-bar progress-bar-success student-color" role="progressbar" aria-valuenow="40"
+                                      aria-valuemin="0" aria-valuemax="100" style="width:50%;">
+                                      $250 to go
+                                    </div></div>Student Loan (OSAP)s<span style="float: right;">Goal: $2459</span></ion-item>
+            <ion-item style="border-color:#ddd;">
+            <div class="progress" style="margin-top:12px;">
+            <div class="progress-bar progress-bar-warning rainy-color" role="progressbar" aria-valuenow="40"
+                                      aria-valuemin="0" aria-valuemax="100" style="width:90%;">
+                                      $50 to go
+                                    </div></div>
+                                    Rainy Day Money 
+                                    <span style="float: right;">Goal: $1k</span></ion-item>
         </ion-list>
+        <br>
+
     </ion-content>
 </ion-view>

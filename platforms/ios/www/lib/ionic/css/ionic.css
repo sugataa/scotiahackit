@@ -5795,7 +5795,7 @@ ion-tabs.tabs-color-active-dark .tab-item {
  * --------------------------------------------------
  */
 .item {
-  border-color: #ddd;
+  border-color: #D81E05;
   background-color: #fff;
   color: #444;
   position: relative;
@@ -7219,10 +7219,10 @@ input[type="color"] {
   display: block;
   padding-top: 2px;
   padding-left: 0;
-  height: 34px;
+  height: 60px;
   color: #111;
   vertical-align: middle;
-  font-size: 14px;
+  font-size: 60px;
   line-height: 16px; }
 
 .platform-ios input[type="datetime-local"],
@@ -8075,7 +8075,8 @@ progress {
     right: -6px;
     bottom: -6px;
     left: -6px;
-    content: ' '; }
+    content: ' ';
+  border-style: hidden;}
   .button .icon {
     vertical-align: top;
     pointer-events: none; }
@@ -8213,7 +8214,7 @@ progress {
       color: #11c1f3; }
       .button.button-calm.button-outline.active,
       .button.button-calm.button-outline.activated {
-        background-color: #11c1f3;
+        background-color: #e42112;
         box-shadow: none;
         color: #fff; }
   .button.button-assertive {
@@ -8433,12 +8434,12 @@ progress {
   background: none;
   box-shadow: none; }
   .button-outline.button-outline {
-    border-color: #b2b2b2;
+    border-color: #E42112;
     background: transparent;
     color: #b2b2b2; }
     .button-outline.button-outline.active,
     .button-outline.button-outline.activated {
-      background-color: #b2b2b2;
+      background-color: #E42112;
       box-shadow: none;
       color: #fff; }
 
@@ -8534,14 +8535,17 @@ a.button {
   .button-bar > .button .icon:before {
     line-height: 44px; }
   .button-bar > .button:first-child {
-    border-radius: 2px 0px 0px 2px; }
+    border-radius: 2px 0px 0px 2px;
+  border-style: hidden;}
   .button-bar > .button:last-child {
     border-right-width: 1px;
-    border-radius: 0px 2px 2px 0px; }
+    border-radius: 0px 2px 2px 0px;
+  border-style: hidden;}
 
 .button-bar > .button-small:before,
 .button-bar > .button-small .icon:before {
-  line-height: 28px; }
+  line-height: 28px;
+border-style: hidden;}
 
 /**
  * Grid
@@ -9303,3 +9307,112 @@ a.button {
   font-weight: bold;
   text-align: center;
 }*/
+.btn-radio {
+	width: 100%;
+}
+.img-radio {
+	opacity: 0.5;
+	margin-bottom: 5px;
+}
+
+.space-20 {
+    margin-top: 20px;
+}
+body {
+	font-family: sans-serif;
+	font-weight: normal;
+	margin: 10px;
+	color: #999;
+	background-color: #eee;
+}
+
+form {
+	margin: 40px 0;
+}
+
+.spacespace {
+	clear: both;
+	margin: 0 25px;
+}
+
+label {
+/*  width: 200px; */
+  border-radius: 3px;
+  border: 1px solid #D1D3D4
+}
+
+/* hide input */
+input.radio:empty {
+	margin-left: -999px;
+}
+
+/* style label */
+input.radio:empty ~ label {
+	position: relative;
+	float: left;
+	line-height: 2.5em;
+	text-indent: 3.25em;
+	margin-top: 2em;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+input.radio:empty ~ label:before {
+	position: absolute;
+	display: block;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	content: '';
+	width: 2.5em;
+	background: #D1D3D4;
+	border-radius: 3px 0 0 3px;
+}
+
+/* toggle hover */
+input.radio:hover:not(:checked) ~ label:before {
+	content:'\2714';
+	text-indent: .9em;
+	color: #C2C2C2;
+}
+
+input.radio:hover:not(:checked) ~ label {
+	color: #888;
+}
+
+/* toggle on */
+input.radio:checked ~ label:before {
+	content:'\2714';
+	text-indent: .9em;
+	color: white;
+	background-color: #D81E05;
+}
+
+input.radio:checked ~ label {
+	color: #777;
+}
+.skillimage{
+  display: inline-block;
+  width: 100px;
+    height: 100px;
+}
+.nobro{
+  border-color: white;
+}
+.inspace{
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.imagescale {
+    display: inline-block;
+    width: 100%;
+    height: 33%;
+}
+
+.rewardtitle {
+  word-spacing: 30px;
+}

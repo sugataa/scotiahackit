@@ -1,23 +1,42 @@
-<ion-view title="Deposit">
+<ion-view title="Deposit" hide-nav-bar="true">
+<ion-item class="app-header">Deposit</ion-item>
     <ion-content overflow-scroll="true" padding="true" class="has-header">
-        <form class="list">
-            <label class="item item-input">
-                <span class="input-label">Input</span>
-                <input type="text" placeholder="">
-            </label>
-        </form>
-        <div class="spacer" style="width: 300px; height: 41px;"></div>
-        <div class="button-bar">
-            <button class="button button-stable button-block ">1</button>
-            <button class="button button-stable button-block ">2</button>
-            <button class="button button-stable button-block ">3</button>
+
+      <form class="list">
+        <div align = "center">
+          Enter Amount
         </div>
+        <label class="item item-input text-center">
+
+            <input type="number" style="text-align: center;" placeholder="">
+
+        </label>
+      </form>
+<div class="spacer" style="width: 300px; height: 20px;"></div>
+<div align = "center">
+  Pay Towards
+</div>
+    <ion-radio ng-model="choice" ng-value="'A'">Student Loan</ion-radio>
+    <ion-radio ng-model="choice" ng-value="'B'">Mortgage</ion-radio>
+    <ion-radio ng-model="choice" ng-value="'C'">Car Loan</ion-radio>
+
         <div class="spacer" style="width: 300px; height: 52px;"></div>
-        <div class="button-bar">
-            <button class="button button-stable button-block ">1</button>
-            <button class="button button-stable button-block ">3</button>
+        <div align = "center">
+          Choose Reward
         </div>
-        <div class="spacer" style="height: 100px;"></div>
-        <button class="button button-stable button-block ">Tap me!</button>
+        <div class="button-bar">
+            <button class="button button-stable  button-block" style="background-color = "white";"> <img src="http://i.imgur.com/pAd4mZW.png" class=" skillimage " alt=""></button>
+            <button class="button button-stable button-block " style="background-color = "white";"> <img src="http://i.imgur.com/XnUWTOE.png" class=" skillimage " alt=""></button>
+          </div>
+
+
+        <div class="spacer" style="height: 20px;"></div>
+        <div class="row">
+           <div class="col text-center">
+        <button class="button button-large button-outline icon ion-plus-circled button-assertive" ng-click="showConfirm()">
+      Confirm</button>
+
+          </div>
+    </div>
     </ion-content>
 </ion-view>
