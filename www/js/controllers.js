@@ -18,6 +18,10 @@ angular.module('app.controllers', [])
 
 .controller('LoginCtrl', function($scope, LoginService, $ionicPopup, $state) {
     $scope.data = {};
+
+    $scope.navigateTo = function(state){
+      return $state.go(state);
+    }
  
     $scope.login = function() {
         LoginService.loginUser($scope.data.username, $scope.data.password).success(function(data) {
