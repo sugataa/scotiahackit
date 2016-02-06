@@ -1,28 +1,33 @@
-<ion-view title="Redeem">
+<ion-view title="Redeem" hide-nav-bar="true">
+<ion-item class="app-header">Redeem</ion-item>
     <ion-content overflow-scroll="true" padding="true" class="has-header">
-        <div>
+<!--         <div>
             <p>
                 <strong>Scene Points</strong>: 1200</p>
         </div>
         <div>
             <p>
                 <strong>Scotia Points</strong>: 1200</p>
+        </div> -->
+        <div class="list card">
+            <div class="item item-divider">Scene Points</div>
+            <a class="item item-body" href="#" target="_blank" onclick="window.open('https://www.scene.ca', '_system', 'location=yes'); return false;">
+                <img src="http://i.imgur.com/DRGcFJz.png" class="card-image" alt=""> <span style="margin-left:28px;text-align:center;font-size:38px;font-weight:bold;">= 1200 pts</span>
+            </a>
         </div>
         <div class="list card">
+            <div class="item item-divider">Scotia Rewards Points</div>
+            <div class="item item-body" >
+                <img src="/img/scotia_icon.png" class="card-image" alt=""> <span style="margin-left:28px;text-align:center;font-size:38px;font-weight:bold;">= 1200 pts</span>
+            </div>
+        </div>
+<!--         <div class="list card">
             <div class="item item-divider">Card</div>
             <div class="item item-body"></div>
         </div>
         <div class="list card">
             <div class="item item-divider">Card</div>
             <div class="item item-body"></div>
-        </div>
-        <div class="list card">
-            <div class="item item-divider">Card</div>
-            <div class="item item-body"></div>
-        </div>
-        <div class="list card">
-            <div class="item item-divider">Card</div>
-            <div class="item item-body"></div>
-        </div>
+        </div> -->
     </ion-content>
 </ion-view>
