@@ -6,6 +6,13 @@ angular.module('app.controllers', [])
    
 .controller('statsCtrl', function($scope) {
 
+$scope.labels = ["Mortgage", "Student Loan", "Rainy Day Money"];
+  $scope.data = [300, 500, 500];
+  // $scope.colors = [
+  //   "#C21B04",
+  //   "#5CB85C",
+  //   "#F0AD4E"];
+
 })
       
 .controller('depositCtrl', function($scope) {
