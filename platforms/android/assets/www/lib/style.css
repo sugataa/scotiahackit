@@ -29,6 +29,12 @@
   background-color: #DCDCDC;
 }
 
+.card-image {
+  display: inline-block;
+  width: 100px;
+  height: auto;
+}
+
 .rainy-color {
   background-color: #F7464A;
 }
