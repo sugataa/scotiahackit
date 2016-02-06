@@ -9292,3 +9292,13 @@ a.button {
   opacity: 0;
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
+.facepic{
+  padding-left: 15px;
+  margin-right: 15px;
+}
+
+.facename{
+  margin-top: 10px;
+  font-weight: bold;
+  text-align: center;
+}
