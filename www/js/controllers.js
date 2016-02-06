@@ -1,6 +1,10 @@
 angular.module('app.controllers', [])
   
-.controller('homeCtrl', function($scope) {
+.controller('homeCtrl', function($scope, $state) {
+
+    $scope.navigateTo = function(state){
+      return $state.go(state);
+    }
 
 })
    
