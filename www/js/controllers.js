@@ -35,11 +35,41 @@ angular.module('app.controllers', [])
 
 })
 
-.controller('homeCtrl', function($scope, $state) {
+.controller('homeCtrl', function($scope, $ionicModal, $state) {
 
     $scope.navigateTo = function(state){
       return $state.go(state);
     }
+
+      $ionicModal.fromTemplateUrl('add-debt.html', {
+        scope: $scope,
+        state: $state,
+        animation: 'slide-in-up',
+      }).then(function(modal) {
+        $scope.modal = modal;
+      })  
+
+  $scope.debts = [];
+
+  $scope.openModal = function() {
+    console.log('Show');
+    $scope.modal.show()
+  }
+
+  $scope.closeModal = function() {
+    $scope.modal.hide();
+  };
+
+  $scope.$on('$destroy', function() {
+    $scope.modal.remove();
+  });
+
+  $scope.createDebt = function(u) {        
+    $scope.debts.push({ amount: u.amount, contribution_type: u.contributionType });
+    $scope.modal.hide();
+    $state.go('tabsController.home');
+    console.log($scope.debts);
+  };
 
 })
    
