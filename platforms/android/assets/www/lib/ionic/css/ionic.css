@@ -987,8 +987,7 @@
   content: ""; }
 
 .ion-android-home:before {
-  content: "";
-color: red;}
+  content: ""; }
 
 .ion-android-image:before {
   content: ""; }
@@ -2156,8 +2155,7 @@ color: red;}
 }
 
 .ion-ios-pulse-strong:before {
-  content: "";
-color: red; }
+  content: ""; }
 
 .ion-ios-rainy:before {
   content: ""; }
@@ -2538,8 +2536,7 @@ color: red; }
   content: ""; }
 
 .ion-plus-circled:before {
-  content: "";
-color: red;}
+  content: "";}
 
 .ion-plus-round:before {
   content: ""; }
@@ -9306,7 +9303,3 @@ a.button {
   font-weight: bold;
   text-align: center;
 }*/
-
-.facepic {
-  padding-bottom: 0;
-}

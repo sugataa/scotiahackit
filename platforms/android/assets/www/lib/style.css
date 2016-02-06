@@ -1,3 +1,8 @@
 * {
   font-family: 'Karla', sans-serif;
 }
+
+.facepic {
+  padding-bottom: 0;
+  height: 176px;
+}

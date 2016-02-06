@@ -6,52 +6,81 @@
                 <div class="row">
                     <div class="col">
                         <div>
-                            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg" class="img-circle">
+                            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg" class="img-circle" style="border:2px solid red">
                         </div>
                     </div>
-                    <div class="col col-75 text-center" style="padding-top:25px;padding-left:100px;">
+                    <div class="col col-75 text-center" style="padding-top:8px;padding-left:100px;">
                         <div class="row text-center">
                            <div class="col text-center">
-                              <span style="font-size:23px;font-weight:bold;">John Smith</span> <span style=""> // Level 2</span>
+                              <span style="font-size:28px;font-weight:bold;">John Smith</span> <span style=""> // Level 2</span>
                            </div>
                         </div>
                         <div class="row">
                            <div class="col text-center">
-                              <button class="button button-outline icon ion-plus-circled button-assertive">&nbsp;&nbsp;Deposit $5</button>
+                              <button class="button button-small button-outline icon ion-plus-circled button-assertive">&nbsp;&nbsp;OSAP</button>
+                              <button class="button button-small button-outline icon ion-plus-circled button-assertive">&nbsp;&nbsp;Mortgage</button>
+                            <div class="progress" style="margin-top:12px;">
+                                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
+                                  aria-valuemin="0" aria-valuemax="100" style="width:70%">
+                                  $150 to go
+                                </div>
+                            </div>
                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="progress" style="margin-top:10px;">
+<!--                 <div class="progress" style="margin-top:10px;">
                     <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
                       aria-valuemin="0" aria-valuemax="100" style="width:40%">
                       40% Complete (success)
                     </div>
-                </div>
+                </div> -->
             </ion-item>
         </ion-list>
         <div style="border-top:1px solid #ddd"></div>
-        <div class="spacer" style="width: 300px; height: 23px"></div>
+        <!-- <div class="spacer" style="width: 300px; height: 23px"></div> -->
 
-        <div class="row">
+<!--         <div class="row" style="background-color: #ddd">
             <div class="col">
-                <a ui-sref="tabsController.deposit" class="button button-large ion-bag icon button-assertive" style="margin-left:33vw;">&nbsp;&nbsp;Redeem!</a>
+                <a ui-sref="tabsController.redeem" class="button button-medium ion-bag icon button-assertive" style="margin-left:23vw;">&nbsp;&nbsp;Redeem!</a>
             </div>
-        </div>
+            <div class="col">
+                <a ui-sref="tabsController.deposit" class="button button-medium ion-plus-circled icon button-assertive button-outline" style="margin-left:5vw;">&nbsp;&nbsp;Contribute!</a>
+            </div>
+        </div> -->
 
-        <!-- <div class="spacer" style="width: 300px; height: 23px;"></div> -->
-        <ion-list></ion-list>
-        <div class="list card">
-            <div class="item item-divider">Card</div>
-            <div class="item item-body"></div>
-        </div>
-        <div class="list card">
-            <div class="item item-divider">Card</div>
-            <div class="item item-body"></div>
-        </div>
-        <div class="list card">
-            <div class="item item-divider">Card</div>
-            <div class="item item-body"></div>
-        </div>
+        <ion-list class="list">
+            <ion-item class="item-thumbnail-left item">
+                <img src="/img/scotia_icon.png">
+                <h2>Earned 10 Scotia Rewards Points!</h2>
+                <p>You now have <b>79 Scotia Rewards Points</b> thanks to your $5 deposit.</p>
+                <p style="margin-top:23px;">Jan 26</p>
+            </ion-item>
+            <ion-item class="item-thumbnail-left item">
+                <img src="/img/scene_icon.png">
+                <h2>Earned 200 Scene Points!</h2>
+                <p>You now have <b>1220 Scene Points</b> thanks to your $150 deposit.</p>
+                <p style="margin-top:23px;">Jan 25</p>
+            </ion-item>
+            <ion-item class="item-thumbnail-left item">
+                <img src="/img/special_offer.jpg">
+                <h2>Act fast and earn 200 Scene Points!</h2>
+                <p><b>Deposit $150</b> and you could earn 200 Scene Points.</p>
+                <p style="margin-top:23px;">Jan 25</p>
+            </ion-item>
+            <ion-item class="item-thumbnail-left item">
+                <img src="/img/scotia_icon.png">
+                <h2>Earned 15 Scotia Rewards Points!</h2>
+                <p>You now have <b>69 Scotia Rewards Points</b> thanks to your $7.50 deposit.</p>
+                <p style="margin-top:23px;">Jan 10</p>
+            </ion-item>  
+            <ion-item class="item-thumbnail-left item">
+                <img src="/img/good_job.png">
+                <h2>Congrats on reaching your December savings goal!</h2>
+                <p>You qualified for draw for <b>25,000 Scene Points</b>.</p>
+                <p style="margin-top:23px;">Jan 1</p>
+            </ion-item>                      
+        </ion-list>
+
     </ion-content>
 </ion-view>
