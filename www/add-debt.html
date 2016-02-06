@@ -1,0 +1,23 @@
+<ion-modal-view>
+  <ion-header-bar class="bar bar-header bar-light">
+    <h1 class="title">Add Debt Goal</h1>
+
+  </ion-header-bar>
+  <ion-content class="padding" overflow-scroll='false'>
+
+      <label class="item item-input">
+        <input ng-model="newUser.amount" type="number" placeholder="How much is the debt?">
+      </label>
+
+      <br>
+
+    	<p style="font-size: 14px;">Contributing Towards</p>
+
+      <ion-radio ng-model="newUser.contribution_type" ng-value="'weekly'">Student Loan</ion-radio>
+      <ion-radio ng-model="newUser.contribution_type" ng-value="'monthly'">Mortgage</ion-radio>
+      <ion-radio ng-model="newUser.contribution_type" ng-value="'yearly'">Rainy Day Money</ion-radio>
+
+      <button class="button button-full button-positive" ng-click="createDebt(newUser)">Add 😊</button>
+
+  </ion-content>
+</ion-modal-view>
