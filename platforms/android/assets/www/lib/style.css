@@ -29,6 +29,12 @@
   background-color: #DCDCDC;
 }
 
+.card-image {
+  display: inline-block;
+  width: 100px;
+  height: auto;
+}
+
 .rainy-color {
   background-color: #F7464A;
 }
@@ -39,6 +45,7 @@
   text-align: center;
   font-size: 17px;
   min-height: 42px;
+  padding-bottom: 10px;
 }
 
 .nav-bar-block, .bar {

@@ -9406,3 +9406,13 @@ input.radio:checked ~ label {
   margin-left: 25px;
   margin-right: 25px;
 }
+
+.imagescale {
+    display: inline-block;
+    width: 100%;
+    height: 33%;
+}
+
+.rewardtitle {
+  word-spacing: 30px;
+}
