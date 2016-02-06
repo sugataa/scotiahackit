@@ -4,10 +4,46 @@
 
 .facepic {
   padding-bottom: 0;
-  height: 176px;
+  height: 178px;
   background-color: #D81E05;
+  margin-top: -12px;
 }
 
+.progress {
+  /*height: 30px;*/
+  min-height: 30px;
+}
+
+.progress-bar span {
+  font-size: 16px;
+  margin-top: 5px;
+  display: block;
+  min-height: 30px;
+}
+
+.mortgage-color {
+  background-color: #97BBCD;
+}
+
+.student-color {
+  background-color: #DCDCDC;
+}
+
+.rainy-color {
+  background-color: #F7464A;
+}
+
+.app-header {
+  color: white;
+  background-color: #D81E05;
+  text-align: center;
+  font-size: 17px;
+  min-height: 42px;
+}
+
+.nav-bar-block, .bar {
+  background-color: inherit !important;
+}
 
 /*
   main css
