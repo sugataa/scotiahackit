@@ -1,0 +1,29 @@
+      <ion-modal-view>
+        <ion-header-bar class="bar bar-header bar-dark">
+          <h1 class="title">Profile Setup</h1>
+          <!-- <button class="button button-clear button-primary" ng-click="modal.hide()">Cancel</button> -->
+        </ion-header-bar>
+        <ion-content class="padding" overflow-scroll='false'>
+
+        	<p style="text-align: center; font-size: 56px;"><i class="fa fa-thumbs-up"></i></p>
+
+			<p style="text-align: center; font-size: 14px;">
+				Great job John. We'll just need to ask you a few more questions to help you with managing your money.
+			</p>
+
+            <label class="item item-input">
+              <input ng-model="newUser.salary" type="number" placeholder="What is your salary?">
+            </label>
+
+            <br>
+
+          	<p style="font-size: 14px;">How often will you make contributions?</p>
+
+			<ion-radio ng-model="newUser.contributions" ng-value="'weekly'">Weekly</ion-radio>
+			<ion-radio ng-model="newUser.contributions" ng-value="'monthly'">Monthly</ion-radio>
+			<ion-radio ng-model="newUser.contributions" ng-value="'yearly'">Yearly</ion-radio>
+
+            <button class="button button-full button-positive" ng-click="createContact(newUser)">Create Profile</button>
+
+        </ion-content>
+      </ion-modal-view>

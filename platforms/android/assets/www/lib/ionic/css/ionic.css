@@ -5795,7 +5795,7 @@ ion-tabs.tabs-color-active-dark .tab-item {
  * --------------------------------------------------
  */
 .item {
-  border-color: #D81E05;
+  border-color: #ddd;
   background-color: #fff;
   color: #444;
   position: relative;
@@ -7222,7 +7222,7 @@ input[type="color"] {
   height: 60px;
   color: #111;
   vertical-align: middle;
-  font-size: 60px;
+  font-size: 14px;
   line-height: 16px; }
 
 .platform-ios input[type="datetime-local"],
@@ -9415,4 +9415,18 @@ input.radio:checked ~ label {
 
 .rewardtitle {
   word-spacing: 30px;
+}
+.redborder
+{
+  border-color: #D81E05;
+}
+
+.redborder2
+{
+  border-top-color: #D81E05
+}
+
+.redfont
+{
+  color: #D81E05;
 }

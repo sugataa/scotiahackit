@@ -52,6 +52,10 @@
   background-color: inherit !important;
 }
 
+img .svg-icon path {
+  fill: #ffffff;
+}
+
 /*
   main css
 */

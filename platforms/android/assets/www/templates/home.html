@@ -14,7 +14,7 @@
                            <div class="col text-center">
                               <span style="font-size:28px;font-weight:bold;color: white;">John Smith</span> 
                               <br>
-                              <span style="color: white;">Level 2 <i class="fa fa-trophy"></i></span>
+                              <span style="color: white;">Level 1 <i class="fa fa-trophy"></i></span>
                            </div>
                         </div>
                         <div class="row">
@@ -81,42 +81,7 @@
             </div>
         </div> -->
 
-        <div class="list">
-            <ion-item nav-transition="ios" class="item-thumbnail-left item-icon-right item" ng-click="navigateTo('tabsController.redeem')">
-                <img src="http://i.imgur.com/XaCopsZ.png">
-                <h2>Earned 10 Scotia Rewards Points!</h2>
-                <p>You now have <b>79 Scotia Rewards Points</b> thanks to your $5 deposit.</p>
-                <p style="margin-top:23px;">Jan 26</p>
-                <i class="icon ion-chevron-right icon-accessory"></i>
-            </ion-item>
-            <ion-item class="item-thumbnail-left item-icon-right item" ng-click="navigateTo('tabsController.redeem')">
-                <img src="http://i.imgur.com/1Ri6aer.png">
-                <h2>Earned 200 Scene Points!</h2>
-                <p>You now have <b>1220 Scene Points</b> thanks to your $150 deposit.</p>
-                <p style="margin-top:23px;">Jan 25</p>
-                <i class="icon ion-chevron-right icon-accessory"></i>
-            </ion-item>
-            <ion-item class="item-thumbnail-left item-icon-right item" ng-click="navigateTo('tabsController.redeem')">
-                <img src="http://i.imgur.com/OtFzUch.jpg">
-                <h2>Act fast and earn 200 Scene Points!</h2>
-                <p>Deposit $150 and you could earn 200 Scene Points.</p>
-                <p style="margin-top:23px;">Jan 25</p>
-                <i class="icon ion-chevron-right icon-accessory"></i>
-            </ion-item>
-            <ion-item class="item-thumbnail-left item-icon-right item" ng-click="navigateTo('tabsController.redeem')">
-                <img src="http://i.imgur.com/XaCopsZ.png">
-                <h2>Earned 15 Scotia Rewards Points!</h2>
-                <p>You now have <b>69 Scotia Rewards Points</b> thanks to your $7.50 deposit.</p>
-                <i class="icon ion-chevron-right icon-accessory"></i>
-            </ion-item>  
-            <ion-item class="item-thumbnail-left item-icon-right item" ng-click="navigateTo('tabsController.stats')">
-                <img src="http://i.imgur.com/9XKolUu.png">
-                <h2>Congrats on reaching your December savings goal!</h2>
-                <p>You qualified for draw for <b>25,000 Scene Points</b>.</p>
-                <p style="margin-top:23px;">Jan 1</p>
-                <i class="icon ion-chevron-right icon-accessory"></i>
-            </ion-item>                      
-        </div>
+    <ng-include src="'templates/modules/empty-state.html'"></ng-include>
 
     </ion-content>
 </ion-view>
