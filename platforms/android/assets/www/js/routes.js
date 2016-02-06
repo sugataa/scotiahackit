@@ -8,6 +8,12 @@ angular.module('app.routes', [])
   // Each state's controller can be found in controllers.js
   $stateProvider
     
+    .state('login', {
+        url: '/login',
+        templateUrl: 'templates/login.html',
+        controller: 'LoginCtrl'
+    })
+
       
         
     .state('tabsController.home', {
@@ -27,7 +33,7 @@ angular.module('app.routes', [])
     .state('tabsController.stats', {
       url: '/stats',
       views: {
-        'tab3': {
+        'tab4': {
           templateUrl: 'templates/stats.html',
           controller: 'statsCtrl'
         }
@@ -60,16 +66,20 @@ angular.module('app.routes', [])
     
       
         
-    .state('redeem', {
+    .state('tabsController.redeem', {
       url: '/redeem',
-      templateUrl: 'templates/redeem.html',
-      controller: 'redeemCtrl'
+      views: {
+        'tab3': {
+          templateUrl: 'templates/redeem.html',
+          controller: 'redeemCtrl'
+        }
+      }
     })
         
       
     ;
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/page2/home');
+  $urlRouterProvider.otherwise('/login');
 
 });
