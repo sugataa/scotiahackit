@@ -12,19 +12,45 @@
                     <div class="col col-75 text-center" style="padding-top:8px;padding-left:100px;">
                         <div class="row text-center">
                            <div class="col text-center">
-                              <span style="font-size:28px;font-weight:bold;">John Smith</span> <span style=""> // Level 2</span>
+                              <span style="font-size:28px;font-weight:bold;color: white;">John Smith</span> 
+                              <br>
+                              <span style="color: white;">Level 2</span>
                            </div>
                         </div>
                         <div class="row">
                            <div class="col text-center">
-                              <button class="button button-small button-outline icon ion-plus-circled button-assertive">&nbsp;&nbsp;OSAP</button>
-                              <button class="button button-small button-outline icon ion-plus-circled button-assertive">&nbsp;&nbsp;Mortgage</button>
-                            <div class="progress" style="margin-top:12px;">
-                                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
-                                  aria-valuemin="0" aria-valuemax="100" style="width:70%">
-                                  $150 to go
+                              <ion-slide-box show-pager="false" on-slide-changed="slideHasChanged($index)">
+                                <ion-slide>
+                                <div class="progress" style="margin-top:12px;">
+                                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="40"
+                                      aria-valuemin="0" aria-valuemax="100" style="width:70%">
+                                      $150 to go
+                                    </div>
                                 </div>
-                            </div>
+                                </ion-slide>
+                                <ion-slide>
+
+                                <div class="progress" style="margin-top:12px;">
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
+                                      aria-valuemin="0" aria-valuemax="100" style="width:50%">
+                                      $250 to go
+                                    </div>
+                                </div>
+
+                                </ion-slide>
+                                <ion-slide>
+
+                                <div class="progress" style="margin-top:12px;">
+                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40"
+                                      aria-valuemin="0" aria-valuemax="100" style="width:90%">
+                                      $50 to go
+                                    </div>
+                                </div>
+
+                                </ion-slide>
+                                 <ion-slide>
+                                    <button class="button button-small button-outline icon ion-plus-circled button-assertive">&nbsp;&nbsp;Add Savings</button>                                 
+                                </ion-slide>
                            </div>
                         </div>
                     </div>
@@ -49,7 +75,7 @@
             </div>
         </div> -->
 
-        <ion-list class="list">
+        <div class="list">
             <ion-item class="item-thumbnail-left item">
                 <img src="/img/scotia_icon.png">
                 <h2>Earned 10 Scotia Rewards Points!</h2>
@@ -65,14 +91,13 @@
             <ion-item class="item-thumbnail-left item">
                 <img src="/img/special_offer.jpg">
                 <h2>Act fast and earn 200 Scene Points!</h2>
-                <p><b>Deposit $150</b> and you could earn 200 Scene Points.</p>
+                <p>Deposit $150 and you could earn 200 Scene Points.</p>
                 <p style="margin-top:23px;">Jan 25</p>
             </ion-item>
             <ion-item class="item-thumbnail-left item">
                 <img src="/img/scotia_icon.png">
                 <h2>Earned 15 Scotia Rewards Points!</h2>
                 <p>You now have <b>69 Scotia Rewards Points</b> thanks to your $7.50 deposit.</p>
-                <p style="margin-top:23px;">Jan 10</p>
             </ion-item>  
             <ion-item class="item-thumbnail-left item">
                 <img src="/img/good_job.png">
@@ -80,7 +105,7 @@
                 <p>You qualified for draw for <b>25,000 Scene Points</b>.</p>
                 <p style="margin-top:23px;">Jan 1</p>
             </ion-item>                      
-        </ion-list>
+        </div>
 
     </ion-content>
 </ion-view>
