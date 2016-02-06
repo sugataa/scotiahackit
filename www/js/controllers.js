@@ -1,9 +1,10 @@
 angular.module('app.controllers', [])
 
-.controller('MainCtrl', function($scope, $ionicModal) {
+.controller('MainCtrl', function($scope, $ionicModal, $state) {
 
   $ionicModal.fromTemplateUrl('profile.html', {
     scope: $scope,
+    state: $state,
     animation: 'slide-in-up',
     backdropClickToClose: false,
   }).then(function(modal) {
@@ -29,6 +30,7 @@ angular.module('app.controllers', [])
     $scope.user.push({ salary: u.salary, contributions: u.contributions });
     console.log(u.salary + ' ' + u.contributions);
     $scope.modal.hide();
+    $state.go('tabsController.home');
   };
 
 })
