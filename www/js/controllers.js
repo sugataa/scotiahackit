@@ -1,5 +1,38 @@
 angular.module('app.controllers', [])
-  
+
+.controller('MainCtrl', function($scope, $ionicModal) {
+
+  $ionicModal.fromTemplateUrl('profile.html', {
+    scope: $scope,
+    animation: 'slide-in-up',
+    backdropClickToClose: false,
+  }).then(function(modal) {
+    $scope.modal = modal;
+  })  
+
+    $scope.user = [];
+
+  $scope.openModal = function() {
+    console.log('Show');
+    $scope.modal.show()
+  }
+
+  $scope.closeModal = function() {
+    $scope.modal.hide();
+  };
+
+  $scope.$on('$destroy', function() {
+    $scope.modal.remove();
+  });
+
+  $scope.createContact = function(u) {        
+    $scope.user.push({ salary: u.salary, contributions: u.contributions });
+    console.log(u.salary + ' ' + u.contributions);
+    $scope.modal.hide();
+  };
+
+})
+
 .controller('homeCtrl', function($scope, $state) {
 
     $scope.navigateTo = function(state){
