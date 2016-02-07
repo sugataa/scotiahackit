@@ -191,8 +191,9 @@ $scope.showConfirm = function() {
 // An alert dialog
 $scope.showAlert = function() {
   var alertPopup = $ionicPopup.alert({
+
     buttons: [
-    {  text: 'Choosen',
+    {  text: 'Okay',
     type: 'button-positive',
   }
     ]

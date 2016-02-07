@@ -35,11 +35,29 @@ angular.module('app.controllers', [])
 
 })
 
-.controller('homeCtrl', function($scope, $ionicModal, $state) {
+.controller('homeCtrl', function($scope, $ionicModal, $state, $rootScope, $ionicHistory) {
 
-    $scope.navigateTo = function(state){
-      return $state.go(state);
-    }
+     $rootScope.debts = [];
+
+      $scope.getInclude = function(){
+
+          if(Object.keys($scope.debts).length > 0){
+              return "templates/modules/full-state.html";
+          }
+          return "templates/modules/empty-state.html";
+      }
+
+      $scope.getProgressInclude = function(){
+
+          if(Object.keys($scope.debts).length > 0){
+              return "templates/modules/full-progress-bar.html";
+          }
+          return "";
+      }
+
+      $scope.navigateTo = function(state){
+        return $state.go(state);
+      }
 
       $ionicModal.fromTemplateUrl('add-debt.html', {
         scope: $scope,
@@ -49,10 +67,7 @@ angular.module('app.controllers', [])
         $scope.modal = modal;
       })
 
-  $scope.debts = [];
-
   $scope.openModal = function() {
-    console.log('Show');
     $scope.modal.show()
   }
 
@@ -65,10 +80,15 @@ angular.module('app.controllers', [])
   });
 
   $scope.createDebt = function(u) {
-    $scope.debts.push({ amount: u.amount, contribution_type: u.contributionType });
+   $rootScope.debts.push({ amount: u.amount, contribution_type: u.contributionType });
     $scope.modal.hide();
-    $state.go('tabsController.home');
-    console.log($scope.debts);
+
+    $ionicHistory.clearCache();
+    $ionicHistory.clearHistory();
+
+
+    //$state.go('tabsController.home');
+    //$ionicTabsDelegate.select(0);
   };
 
 })
@@ -76,7 +96,7 @@ angular.module('app.controllers', [])
 .controller('statsCtrl', function($scope) {
 
 $scope.labels = ["Mortgage", "Student Loan", "Rainy Day Money"];
-  $scope.data = [300, 500, 500];
+  $scope.data = [3500, 490, 50];
   // $scope.colors = [
   //   "#C21B04",
   //   "#5CB85C",
@@ -111,4 +131,75 @@ $scope.labels = ["Mortgage", "Student Loan", "Rainy Day Money"];
     }
 })
 
- 
+.controller('PopupCtrl',function($scope, $ionicPopup, $timeout) {
+
+// Triggered on a button click, or some other target
+$scope.showPopup = function() {
+ $scope.data = {};
+
+
+ // An elaborate, custom popup
+ var myPopup = $ionicPopup.show({
+   template: '<input type="password" ng-model="data.wifi">',
+   title: 'Enter Wi-Fi Password',
+   subTitle: 'Please use normal things',
+   scope: $scope,
+   buttons: [
+     { text: 'Cancel' },
+     {
+       text: '<b>Save</b>',
+       type: 'button-positive',
+       onTap: function(e) {
+         if (!$scope.data.wifi) {
+           //don't allow the user to close unless he enters wifi password
+           e.preventDefault();
+         } else {
+           return $scope.data.wifi;
+         }
+       }
+     }
+   ]
+ });
+
+ myPopup.then(function(res) {
+   console.log('Tapped!', res);
+ });
+
+ $timeout(function() {
+    myPopup.close(); //close the popup after 3 seconds for some reason
+ }, 3000);
+};
+
+// A confirm dialog
+$scope.showConfirm = function() {
+  var points;
+  var confirmPopup = $ionicPopup.confirm({
+    title: 'Confirm Deposit',
+    template: 'Are you sure you want to fund this goal?'
+
+  });
+
+  confirmPopup.then(function(res) {
+    if(res) {
+      console.log('You are sure');
+    } else {
+      console.log('You are not sure');
+    }
+  });
+};
+
+// An alert dialog
+$scope.showAlert = function() {
+  var alertPopup = $ionicPopup.alert({
+    buttons: [
+    {  text: 'Choosen',
+    type: 'button-positive',
+  }
+    ]
+  });
+
+  alertPopup.then(function(res) {
+    console.log('Thank you for not eating my delicious ice cream cone');
+  });
+};
+});
