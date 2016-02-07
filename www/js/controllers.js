@@ -37,6 +37,8 @@ angular.module('app.controllers', [])
 
 .controller('homeCtrl', function($scope, $ionicModal, $state, $rootScope, $ionicHistory) {
 
+
+
      $rootScope.debts = [];
 
       $scope.getInclude = function(){
@@ -106,19 +108,112 @@ angular.module('app.controllers', [])
 .controller('statsCtrl', function($scope) {
 
 $scope.labels = ["Student Loan", "Credit Card (VISA)", "Installment Loan"];
-  $scope.data = [21000, 1800, 4800];
+  $rootScope.data = [21000, 1800, 4800];
   // $scope.colors = [
   //   "#C21B04",
   //   "#5CB85C",
   //   "#F0AD4E"];
 
+  $rootScope.total = function() {
+    var temp = 0;
+    for (var i = 0; i < data.length; i++) {
+      temp = temp + data[i];
+    }
+    return temp;
+  };
 })
 
 .controller('depositCtrl', function($scope) {
+
 $scope.master = {};
+
+// Triggered on a button click, or some other target
+$scope.showPopup = function() {
+  $scope.data = {};
+
+
+   // An elaborate, custom popup
+   var myPopup = $ionicPopup.show({
+     template: '<input type="password" ng-model="data.wifi">',
+     title: 'Enter Wi-Fi Password',
+     subTitle: 'Please use normal things',
+     scope: $scope,
+     buttons: [
+       { text: 'Cancel' },
+       {
+         text: '<b>Save</b>',
+         type: 'button-positive',
+         onTap: function(e) {
+           if (!$scope.data.wifi) {
+             //don't allow the user to close unless he enters wifi password
+             e.preventDefault();
+           } else {
+             return $scope.data.wifi;
+           }
+         }
+       }
+     ]
+   });
+
+   myPopup.then(function(res) {
+     console.log('Tapped!', res);
+   });
+
+   $timeout(function() {
+      myPopup.close(); //close the popup after 3 seconds for some reason
+   }, 3000);
+  };
+
+  // A confirm dialog
+  $scope.showConfirm = function() {
+    var points;
+    var confirmPopup = $ionicPopup.confirm({
+      title: 'Confirm Deposit',
+      template: 'Are you sure you want to fund this goal?'
+
+    });
+
+    confirmPopup.then(function(res) {
+      if(res) {
+        console.log('You are sure');
+      } else {
+        console.log('You are not sure');
+      }
+    });
+  };
+
+  // An alert dialog
+  $scope.showAlert = function() {
+    var alertPopup = $ionicPopup.alert({
+
+      buttons: [
+      {  text: 'Okay',
+      type: 'button-positive',
+    }
+      ]
+    });
+
+    alertPopup.then(function(res) {
+      console.log('Thank you for not eating my delicious ice cream cone');
+    });
+  };
+
+
+
 $scope.update = function(user) {
-      $scope.master = angular.copy(user);
-      };
+    $scope.master = angular.copy(user);
+
+    // change the rootscope data on update
+    if (user.choice == 0) {
+      $rootscope.data[0] = $rootscope.data[0] - user.amount;
+    }
+    if (user.choice == 1) {
+      $rootscope.data[1] = $rootscope.data[1] - user.amount;
+    }
+    if (user.choice == 2) {
+      $rootscope.data[2] = $rootscope.data[2] - user.amount;
+    }
+};
       $scope.reset = function() {
         $scope.user = angular.copy($scope.master);
       };
@@ -151,74 +246,4 @@ $scope.update = function(user) {
 
 .controller('PopupCtrl',function($scope, $ionicPopup, $timeout) {
 
-// Triggered on a button click, or some other target
-$scope.showPopup = function() {
- $scope.data = {};
-
-
- // An elaborate, custom popup
- var myPopup = $ionicPopup.show({
-   template: '<input type="password" ng-model="data.wifi">',
-   title: 'Enter Wi-Fi Password',
-   subTitle: 'Please use normal things',
-   scope: $scope,
-   buttons: [
-     { text: 'Cancel' },
-     {
-       text: '<b>Save</b>',
-       type: 'button-positive',
-       onTap: function(e) {
-         if (!$scope.data.wifi) {
-           //don't allow the user to close unless he enters wifi password
-           e.preventDefault();
-         } else {
-           return $scope.data.wifi;
-         }
-       }
-     }
-   ]
- });
-
- myPopup.then(function(res) {
-   console.log('Tapped!', res);
- });
-
- $timeout(function() {
-    myPopup.close(); //close the popup after 3 seconds for some reason
- }, 3000);
-};
-
-// A confirm dialog
-$scope.showConfirm = function() {
-  var points;
-  var confirmPopup = $ionicPopup.confirm({
-    title: 'Confirm Deposit',
-    template: 'Are you sure you want to fund this goal?'
-
-  });
-
-  confirmPopup.then(function(res) {
-    if(res) {
-      console.log('You are sure');
-    } else {
-      console.log('You are not sure');
-    }
-  });
-};
-
-// An alert dialog
-$scope.showAlert = function() {
-  var alertPopup = $ionicPopup.alert({
-
-    buttons: [
-    {  text: 'Okay',
-    type: 'button-positive',
-  }
-    ]
-  });
-
-  alertPopup.then(function(res) {
-    console.log('Thank you for not eating my delicious ice cream cone');
-  });
-};
 });

@@ -4,6 +4,10 @@ angular.module('app.services', [])
 
 }])
 
+.factory('Data', function() {
+    
+})
+
 .service('LoginService', function($q) {
     return {
         loginUser: function(name, pw) {
