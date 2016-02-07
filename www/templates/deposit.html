@@ -16,24 +16,24 @@
 <div align = "center">
   Pay Towards
 </div>
-    <ion-radio class = "redborder redfont" ng-model="choice" ng-value="'A'">Student Loan</ion-radio>
-    <ion-radio class = "redborder redfont" ng-model="choice" ng-value="'B'">Mortgage</ion-radio>
-    <ion-radio class = "redborder redfont" ng-model="choice" ng-value="'C'">Car Loan</ion-radio>
+    <ion-radio class = "redborder redfont" ng-model="choice" ng-value='A'>Student Loan</ion-radio>
+    <ion-radio class = "redborder redfont" ng-model="choice" ng-value='B'>Mortgage</ion-radio>
+    <ion-radio class = "redborder redfont" ng-model="choice" ng-value='C'>Car Loan</ion-radio>
 
         <div class="spacer" style="width: 300px; height: 52px;"></div>
         <div align = "center">
           Choose Reward
         </div>
         <div class="button-bar">
-            <button class="button button-stable  button-block " style="background-color = "white";"> <img src="http://i.imgur.com/pAd4mZW.png" class=" skillimage " alt=""></button>
-            <button class="button button-stable button-block " style="background-color = "white";"> <img src="http://i.imgur.com/XnUWTOE.png" class=" skillimage " alt=""></button>
-          </div>
 
+            <button  ng-controller = "PopupCtrl"class="button button-stable  button-block " style="background-color = "white";" ng-click = "showAlert()"> <img src="http://i.imgur.com/pAd4mZW.png" class=" skillimage " alt=""></button>
+            <button  ng-controller = "PopupCtrl"class="button button-stable button-block " style="background-color = "white";" ng-click = "showAlert()"> <img src="http://i.imgur.com/XnUWTOE.png" class=" skillimage " alt=""></button>
+          </div>
 
         <div class="spacer" style="height: 20px;"></div>
         <div class="row">
            <div class="col text-center">
-        <button ng-controller="PopupCtrl" class="button button-large button-outline icon ion-plus-circled button-assertive" ng-click="showConfirm()">Fund</button>
+        <button ng-controller="PopupCtrl" class="button button-large button-outline button-assertive" ng-click="showConfirm()">Fund</button>
 
 
           </div>

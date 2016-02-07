@@ -133,6 +133,7 @@ $scope.labels = ["Mortgage", "Student Loan", "Rainy Day Money"];
 $scope.showPopup = function() {
  $scope.data = {};
 
+
  // An elaborate, custom popup
  var myPopup = $ionicPopup.show({
    template: '<input type="password" ng-model="data.wifi">',
@@ -167,9 +168,11 @@ $scope.showPopup = function() {
 
 // A confirm dialog
 $scope.showConfirm = function() {
+  var points;
   var confirmPopup = $ionicPopup.confirm({
     title: 'Confirm Deposit',
     template: 'Are you sure you want to fund this goal?'
+
   });
 
   confirmPopup.then(function(res) {
@@ -184,8 +187,11 @@ $scope.showConfirm = function() {
 // An alert dialog
 $scope.showAlert = function() {
   var alertPopup = $ionicPopup.alert({
-    title: 'Don\'t eat that!',
-    template: 'It might taste good'
+    buttons: [
+    {  text: 'Choosen',
+    type: 'button-positive',
+  }
+    ]
   });
 
   alertPopup.then(function(res) {
