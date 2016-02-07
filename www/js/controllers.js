@@ -83,19 +83,19 @@ angular.module('app.controllers', [])
     // jQuery('.slider-slide[data-index="'+$index+'"]').find('.amount').delay('1000').fadeOut();
     jQuery('.slider-slide[data-index="'+$index+'"]').find('.amount').hide();
     jQuery('.slider-slide[data-index="'+$index+'"]').find('.label').show();
-    jQuery('.slider-slide[data-index="'+$index+'"]').find('.label').delay('1000').fadeOut();
-    jQuery('.slider-slide[data-index="'+$index+'"]').find('.amount').delay('800').fadeIn();
+    jQuery('.slider-slide[data-index="'+$index+'"]').find('.label').delay('500').fadeOut();
+    jQuery('.slider-slide[data-index="'+$index+'"]').find('.amount').delay('1000').fadeIn();
   };
 
   $scope.createDebt = function(u) {
    $rootScope.debts.push({ amount: u.amount, contribution_type: u.contributionType });
     $scope.modal.hide();
 
+    jQuery('.add-debt').html('<i class="fa fa-spinner fa-spin"></i>');
     $ionicHistory.clearCache();
     $ionicHistory.clearHistory();
 
     jQuery('span.level-up').html('Level 2 <i class="fa fa-trophy">').fadeOut().fadeIn();
-
 
     //$state.go('tabsController.home');
     //$ionicTabsDelegate.select(0);
@@ -105,8 +105,8 @@ angular.module('app.controllers', [])
 
 .controller('statsCtrl', function($scope) {
 
-$scope.labels = ["Mortgage", "Student Loan", "Rainy Day Money"];
-  $scope.data = [3500, 490, 50];
+$scope.labels = ["Student Loan", "Credit Card (VISA)", "Installment Loan"];
+  $scope.data = [21000, 1800, 4800];
   // $scope.colors = [
   //   "#C21B04",
   //   "#5CB85C",
