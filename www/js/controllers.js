@@ -204,6 +204,7 @@ $scope.showPopup = function() {
 
     confirmPopup.then(function(res) {
       if(res) {
+               jQuery('.home-list').prepend('<ion-item nav-transition="ios" class="item-thumbnail-left item-icon-right item" ng-click="navigateTo("tabsController.redeem")"><img src="http://i.imgur.com/XaCopsZ.png"><h2>Deposit Made</h2><p>Well done, you made a deposit.</p><p style="margin-top:23px;"></p><i class="icon ion-chevron-right icon-accessory"></i>             </ion-item>');
         console.log('You are sure');
       } else {
         console.log('You are not sure');
