@@ -105,7 +105,7 @@ angular.module('app.controllers', [])
 
 })
 
-.controller('statsCtrl', function($scope) {
+.controller('statsCtrl', function($scope, $rootScope) {
 
 $scope.labels = ["Student Loan", "Credit Card (VISA)", "Installment Loan"];
   $rootScope.data = [21000, 1800, 4800];
@@ -123,7 +123,7 @@ $scope.labels = ["Student Loan", "Credit Card (VISA)", "Installment Loan"];
   };
 })
 
-.controller('depositCtrl', function($scope) {
+.controller('depositCtrl', function($scope, $ionicPopup) {
 
 $scope.master = {};
 
