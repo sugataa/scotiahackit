@@ -56,6 +56,20 @@ img .svg-icon path {
   fill: #ffffff;
 }
 
+span.interest-rate {
+  font-size: 20px;
+  float: right;
+  margin-top: -2px;
+  color: red;
+}
+
+span.debt-goal {
+  font-size: 16px;
+  float: right; 
+  margin-right: 25px;
+  font-weight: bold;
+}
+
 /*
   main css
 */
