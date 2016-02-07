@@ -79,12 +79,20 @@ angular.module('app.controllers', [])
     $scope.modal.remove();
   });
 
+  $scope.slideHasChanged = function($index){
+    jQuery('.slider-slide[data-index="'+$index+'"]').find('.amount').delay('1000').fadeOut();
+    jQuery('.slider-slide[data-index="'+$index+'"]').find('.label').delay('1000').fadeOut();
+    jQuery('.slider-slide[data-index="'+$index+'"]').find('.amount').delay('800').fadeIn();
+  };
+
   $scope.createDebt = function(u) {
    $rootScope.debts.push({ amount: u.amount, contribution_type: u.contributionType });
     $scope.modal.hide();
 
     $ionicHistory.clearCache();
     $ionicHistory.clearHistory();
+
+    jQuery('span.level-up').html('Level 2 <i class="fa fa-trophy">').fadeOut().fadeIn();
 
 
     //$state.go('tabsController.home');
