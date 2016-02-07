@@ -113,6 +113,9 @@ $scope.labels = ["Student Loan", "Credit Card (VISA)", "Installment Loan"];
   //   "#C21B04",
   //   "#5CB85C",
   //   "#F0AD4E"];
+  $scope.SL = String(((28000/$rootScope.data[0])*100) + 1000) + "px";
+  $scope.CC = String(((1800/$rootScope.data[1])*100) + 1000) + "px";
+  $scope.CL = String(((4800/$rootScope.data[2])*100) + 1000) + "px";
 
   $rootScope.total = function() {
     var temp = 0;

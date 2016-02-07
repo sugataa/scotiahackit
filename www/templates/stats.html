@@ -16,20 +16,20 @@
             <ion-item style="border-color:#ddd;">
             <div class="progress" style="margin-top:12px;">
             <div class="progress-bar progress-bar-info mortgage-color" role="progressbar" aria-valuenow="93"
-                                      aria-valuemin="0" aria-valuemax="100" style="width:93%;">
-                                      <span>$21000 to go</span>
+                                      aria-valuemin="0" aria-valuemax="100" ng-style="{ 'width' : SL }">
+                                      <span>${{$root.data[0]}} to go</span>
                                     </div></div>Student Loan<span class="interest-rate">3.8%</span><span class="debt-goal">$27,000</span></ion-item>
             <ion-item style="border-color:#ddd;">
             <div class="progress" style="margin-top:12px;">
             <div class="progress-bar progress-bar-success student-color" role="progressbar" aria-valuenow="80"
                                       aria-valuemin="0" aria-valuemax="100" style="width:80%;">
-                                      <span>$1800 to go</span>
+                                      <span>${{$root.data[1]}} to go</span>
                                     </div></div>Credit Card (VISA)<span class="interest-rate">19%</span><span class="debt-goal">$3000</span></ion-item>
             <ion-item style="border-color:#ddd;">
             <div class="progress" style="margin-top:12px;">
             <div class="progress-bar progress-bar-warning rainy-color" role="progressbar" aria-valuenow="95"
                                       aria-valuemin="0" aria-valuemax="100" style="width:95%;">
-                                      <span>$4800 to go</span>
+                                      <span>${{$root.data[2]}} to go</span>
                                     </div></div>
                                     Installment Loan
                                     <span class="interest-rate">40%</span><span class="debt-goal">$5000</span></ion-item>
