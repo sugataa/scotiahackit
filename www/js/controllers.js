@@ -83,8 +83,8 @@ angular.module('app.controllers', [])
     // jQuery('.slider-slide[data-index="'+$index+'"]').find('.amount').delay('1000').fadeOut();
     jQuery('.slider-slide[data-index="'+$index+'"]').find('.amount').hide();
     jQuery('.slider-slide[data-index="'+$index+'"]').find('.label').show();
-    jQuery('.slider-slide[data-index="'+$index+'"]').find('.label').delay('1000').fadeOut();
-    jQuery('.slider-slide[data-index="'+$index+'"]').find('.amount').delay('800').fadeIn();
+    jQuery('.slider-slide[data-index="'+$index+'"]').find('.label').delay('500').fadeOut();
+    jQuery('.slider-slide[data-index="'+$index+'"]').find('.amount').delay('1000').fadeIn();
   };
 
   $scope.createDebt = function(u) {
