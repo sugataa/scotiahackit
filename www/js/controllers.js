@@ -116,16 +116,38 @@ $scope.labels = ["Student Loan", "Credit Card (VISA)", "Installment Loan"];
 
   $rootScope.total = function() {
     var temp = 0;
-    for (var i = 0; i < data.length; i++) {
-      temp = temp + data[i];
+    for (var i = 0; i < $rootScope.data.length; i++) {
+      temp = temp + $rootScope.data[i];
     }
     return temp;
   };
 })
 
-.controller('depositCtrl', function($scope, $ionicPopup) {
+.controller('depositCtrl', function($scope, $ionicPopup, $rootScope) {
 
-$scope.master = {};
+  $scope.myAmount = {
+    myValue: 0
+  };
+
+  $scope.clientSideList = [
+    { text: "Student Loan", value: 0 },
+    { text: "Credit Card (VISA)", value: 1 },
+    { text: "Installment Loan", value: 2 },
+  ];
+
+
+
+  $scope.myChoice = {
+    myValue: 0
+  };
+
+  console.log($scope.myChoice);
+
+  console.log($scope.user);
+
+  // $scope.myAmount = 0;
+
+  $scope.master = {};
 
 // Triggered on a button click, or some other target
 $scope.showPopup = function() {
@@ -165,8 +187,12 @@ $scope.showPopup = function() {
   };
 
   // A confirm dialog
-  $scope.showConfirm = function() {
+  $scope.showConfirm = function(user) {
+    console.log($scope.myChoice.myValue.myValue);
+
     var points;
+    console.log($scope.user);
+    console.log($scope.myAmount);
     var confirmPopup = $ionicPopup.confirm({
       title: 'Confirm Deposit',
       template: 'Are you sure you want to fund this goal?'
@@ -180,6 +206,29 @@ $scope.showPopup = function() {
         console.log('You are not sure');
       }
     });
+
+    console.log($scope.myAmount);
+    console.log($scope.myChoice);
+    console.log($scope.myPoints);
+    // change the rootscope data on update
+    console.log($rootScope.data);
+
+    var temp;
+    if ($scope.myChoice.myValue == 0) {
+      console.log($rootScope.data[0]);
+      console.log($scope.myAmount.myValue);
+      temp = $rootScope.data[0] - $scope.myAmount.myValue;
+      console.log(temp);
+      $rootScope.data[0] = temp;
+      console.log($rootScope.data[0]);
+    }
+    if ($scope.myChoice.myValue == 1) {
+      $rootScope.data[1] = $rootScope.data[1] - $scope.myAmount;
+    }
+    if ($scope.myChoice.myValue == 2) {
+      $rootScope.data[2] = $rootScope.data[2] - $scope.myAmount;
+    }
+    console.log($rootScope.data);
   };
 
   // An alert dialog
@@ -202,6 +251,7 @@ $scope.showPopup = function() {
 
 $scope.update = function(user) {
     $scope.master = angular.copy(user);
+    console.log(user);
 
     // change the rootscope data on update
     if (user.choice == 0) {
