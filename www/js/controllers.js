@@ -35,20 +35,24 @@ angular.module('app.controllers', [])
 
 })
 
-.controller('homeCtrl', function($scope, $ionicModal, $state, $rootScope) {
+.controller('homeCtrl', function($scope, $ionicModal, $state, $rootScope, $ionicHistory) {
 
      $rootScope.debts = [];
 
       $scope.getInclude = function(){
 
-          console.log($rootScope.debts);
-
-          //console.log(Object.keys($scope.debts).length);
-
           if(Object.keys($scope.debts).length > 0){
               return "templates/modules/full-state.html";
           }
           return "templates/modules/empty-state.html";
+      }
+
+      $scope.getProgressInclude = function(){
+
+          if(Object.keys($scope.debts).length > 0){
+              return "templates/modules/full-progress-bar.html";
+          }
+          return "";
       }
 
       $scope.navigateTo = function(state){
@@ -92,7 +96,7 @@ angular.module('app.controllers', [])
 .controller('statsCtrl', function($scope) {
 
 $scope.labels = ["Mortgage", "Student Loan", "Rainy Day Money"];
-  $scope.data = [300, 500, 500];
+  $scope.data = [3500, 490, 50];
   // $scope.colors = [
   //   "#C21B04",
   //   "#5CB85C",
