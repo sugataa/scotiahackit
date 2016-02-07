@@ -80,7 +80,9 @@ angular.module('app.controllers', [])
   });
 
   $scope.slideHasChanged = function($index){
-    jQuery('.slider-slide[data-index="'+$index+'"]').find('.amount').delay('1000').fadeOut();
+    // jQuery('.slider-slide[data-index="'+$index+'"]').find('.amount').delay('1000').fadeOut();
+    jQuery('.slider-slide[data-index="'+$index+'"]').find('.amount').hide();
+    jQuery('.slider-slide[data-index="'+$index+'"]').find('.label').show();
     jQuery('.slider-slide[data-index="'+$index+'"]').find('.label').delay('1000').fadeOut();
     jQuery('.slider-slide[data-index="'+$index+'"]').find('.amount').delay('800').fadeIn();
   };
