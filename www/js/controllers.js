@@ -78,6 +78,11 @@ angular.module('app.controllers', [])
   $scope.createDebt = function(u) {
    $rootScope.debts.push({ amount: u.amount, contribution_type: u.contributionType });
     $scope.modal.hide();
+
+    $ionicHistory.clearCache();
+    $ionicHistory.clearHistory();
+
+
     //$state.go('tabsController.home');
     //$ionicTabsDelegate.select(0);
   };
