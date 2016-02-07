@@ -7,8 +7,7 @@
           Enter Amount
         </div>
         <label class="item item-input text-center redborder">
-
-            <input type="number" style="text-align: center; font-size: 60px;" placeholder="">
+            <input type="number"  ng-controller = "depositCtrl" ng-model = "user.amount" style="text-align: center; font-size: 60px;" placeholder="">
 
         </label>
       </form>
@@ -16,9 +15,9 @@
 <div align = "center">
   Pay Towards
 </div>
-    <ion-radio class = "redborder redfont" ng-model="choice" ng-value='A'>Student Loan</ion-radio>
-    <ion-radio class = "redborder redfont" ng-model="choice" ng-value='B'>Mortgage</ion-radio>
-    <ion-radio class = "redborder redfont" ng-model="choice" ng-value='C'>Car Loan</ion-radio>
+    <ion-radio class = "redborder redfont" ng-model="user.choice" ng-value='A'>Student Loan</ion-radio>
+    <ion-radio class = "redborder redfont" ng-model="user.choice"ng-value='B'>Mortgage</ion-radio>
+    <ion-radio class = "redborder redfont" ng-model="user.choice"ng-value='C'>Car Loan</ion-radio>
 
         <div class="spacer" style="width: 300px; height: 52px;"></div>
         <div align = "center">
@@ -34,9 +33,8 @@
         <div class="row">
            <div class="col text-center">
         <button ng-controller="PopupCtrl" class="button button-large button-outline button-assertive" ng-click="showConfirm()">Fund</button>
-
-
           </div>
     </div>
+    
     </ion-content>
 </ion-view>
