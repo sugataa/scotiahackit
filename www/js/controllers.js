@@ -35,11 +35,25 @@ angular.module('app.controllers', [])
 
 })
 
-.controller('homeCtrl', function($scope, $ionicModal, $state) {
+.controller('homeCtrl', function($scope, $ionicModal, $state, $rootScope) {
 
-    $scope.navigateTo = function(state){
-      return $state.go(state);
-    }
+     $rootScope.debts = [];
+
+      $scope.getInclude = function(){
+
+          console.log($rootScope.debts);
+
+          //console.log(Object.keys($scope.debts).length);
+
+          if(Object.keys($scope.debts).length > 0){
+              return "templates/modules/full-state.html";
+          }
+          return "templates/modules/empty-state.html";
+      }
+
+      $scope.navigateTo = function(state){
+        return $state.go(state);
+      }
 
       $ionicModal.fromTemplateUrl('add-debt.html', {
         scope: $scope,
@@ -49,10 +63,7 @@ angular.module('app.controllers', [])
         $scope.modal = modal;
       })
 
-  $scope.debts = [];
-
   $scope.openModal = function() {
-    console.log('Show');
     $scope.modal.show()
   }
 
@@ -65,10 +76,10 @@ angular.module('app.controllers', [])
   });
 
   $scope.createDebt = function(u) {
-    $scope.debts.push({ amount: u.amount, contribution_type: u.contributionType });
+   $rootScope.debts.push({ amount: u.amount, contribution_type: u.contributionType });
     $scope.modal.hide();
-    $state.go('tabsController.home');
-    console.log($scope.debts);
+    //$state.go('tabsController.home');
+    //$ionicTabsDelegate.select(0);
   };
 
 })

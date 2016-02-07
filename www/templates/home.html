@@ -1,5 +1,5 @@
 
-<ion-view title="Home" hide-nav-bar = "true">
+<ion-view title="Home" hide-nav-bar = "true" cache-view="false">
     <ion-content overflow-scroll="true" padding="" class="">
         <ion-list>
             <ion-item class="facepic">
@@ -81,7 +81,9 @@
             </div>
         </div> -->
 
-    <ng-include src="'templates/modules/empty-state.html'"></ng-include>
+    <ng-include src="getInclude()"></ng-include>
+
+    <!-- <ng-include src="'templates/modules/empty-state.html'"></ng-include> -->
 
     </ion-content>
 </ion-view>
